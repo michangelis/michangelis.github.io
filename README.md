@@ -1,16 +1,26 @@
-# React + Vite
+# michangelis.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Michael Angeles' personal site, deployed live at
+[michangelis.github.io](https://michangelis.github.io).
 
-Currently, two official plugins are available:
+This is **v1 — "The Machine"**: a single full-viewport Three.js scene (~5,200
+instanced cubes) that morphs through six formations as scroll drives a cinematic
+camera. Pure static site — HTML/CSS/JS with vendored three.js, no build step. See
+`NOTES.md` for the design story.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Run locally
 
-## React Compiler
+```
+python3 -m http.server 4173   # open http://localhost:4173
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Deploy
 
-## Expanding the ESLint configuration
+`.github/workflows/deploy.yml` uploads the repo root straight to GitHub Pages on
+push to `main` — nothing to build.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## The rest of the experiments
+
+The full redesign catalog (v1–v6 + the earlier React/Vite build) and the Night
+Engines company-site work now live in the separate `Websites` repo
+(`~/Desktop/Websites`).

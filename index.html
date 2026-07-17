@@ -1,20 +1,270 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Michael Angeles — Software Engineer</title>
-    <meta name="description" content="Building the agent OS for business — a second brain and mission control for companies. Previously ran an AI lab shipping multi-agent systems that processed 2,000+ real insurance claims." />
-    <meta property="og:title" content="Michael Angeles — Building the agent OS for business" />
-    <meta property="og:description" content="Second brain + mission control for companies. Production AI, real numbers, built in public." />
-    <meta property="og:type" content="website" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michael Angeles — Building the Agent OS for Business</title>
+<meta name="description" content="Founder &amp; engineer building the agent OS for business — a second brain and mission control for companies. Multi-agent systems that processed 2,000+ real insurance claims in production.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0b0d'/%3E%3Crect x='11' y='4' width='10' height='24' fill='%23c6ff2e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hud hud-top">
+  <div class="hud-id">
+    <span class="hud-name">MICHAEL&nbsp;ANGELES</span>
+    <span class="hud-handle">michael.angeles_</span>
+  </div>
+  <div class="hud-clock" aria-label="Athens local time">ATH <span id="clock">--:--:--</span></div>
+  <div class="hud-status"><i class="dot" aria-hidden="true"></i>building independently — open to the right people</div>
+</header>
+
+<nav class="hud hud-rail" aria-label="Chapters">
+  <a href="#hero"    data-ch="0"><span>00</span><em>INIT</em></a>
+  <a href="#metrics" data-ch="1"><span>01</span><em>READOUT</em></a>
+  <a href="#os"      data-ch="2"><span>02</span><em>AGENT OS</em></a>
+  <a href="#work"    data-ch="3"><span>03</span><em>RECORD</em></a>
+  <a href="#stack"   data-ch="4"><span>04</span><em>STACK</em></a>
+  <a href="#contact" data-ch="5"><span>05</span><em>SIGNAL</em></a>
+</nav>
+
+<div class="hud hud-bottom" aria-hidden="true">
+  <span class="hud-scroll" id="formlabel">SCROLL</span>
+  <span class="hud-progress"><i id="pbar"></i></span>
+  <span class="hud-chapter" id="chlabel">00 / INIT</span>
+</div>
+
+<div id="scroll-space" aria-hidden="true"></div>
+
+<main id="content">
+
+  <!-- 00 · HERO -->
+  <section class="chapter chapter-hero" id="hero" data-ch="0">
+    <div class="inner">
+      <p class="eyebrow" data-reveal>FOUNDER &amp; ENGINEER — ATHENS → LONDON</p>
+      <h1 class="display" data-reveal>
+        <span class="l">BUILDING</span>
+        <span class="l">THE <b class="acid">AGENT&nbsp;OS</b></span>
+        <span class="l">FOR BUSINESS<span class="acid">.</span></span>
+      </h1>
+      <p class="lede" data-reveal>A second brain and mission control for companies — agents
+        with full memory of your business, executing real work. Not a thesis:
+        I ran an AI lab where my multi-agent systems processed
+        <b>2,000+ real insurance claims</b> in production.</p>
+      <div class="cta-row" data-reveal>
+        <a class="btn btn-acid magnetic" href="#work">VIEW TRACK RECORD</a>
+        <a class="btn magnetic" href="mailto:angeles.michalis@gmail.com">EMAIL ME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 · METRICS -->
+  <section class="chapter chapter-metrics" id="metrics" data-ch="1">
+    <div class="inner">
+      <p class="section-tag" data-reveal><span>01</span> READOUT — PRODUCTION TELEMETRY</p>
+      <div class="metrics">
+        <div class="metric" data-reveal>
+          <div class="metric-num"><span class="count" data-count="2000" data-suffix="+">0</span></div>
+          <div class="metric-label">PRODUCTION CLAIMS PROCESSED</div>
+        </div>
+        <div class="metric" data-reveal>
+          <div class="metric-num"><span class="count" data-count="25">0</span><span class="metric-arrow">→</span><span class="count" data-count="5" data-suffix="&thinsp;MIN">0</span></div>
+          <div class="metric-label">PER CLAIM, AUTOMATED</div>
+        </div>
+        <div class="metric" data-reveal>
+          <div class="metric-num"><span class="count" data-count="99" data-suffix="%">0</span></div>
+          <div class="metric-label">F1 SCORE IN PRODUCTION</div>
+        </div>
+        <div class="metric" data-reveal>
+          <div class="metric-num"><span class="count" data-count="2" data-suffix="×">0</span></div>
+          <div class="metric-label">NATIONAL HACKATHON WINS</div>
+        </div>
+        <div class="metric" data-reveal>
+          <div class="metric-num"><span class="count" data-count="1">0</span></div>
+          <div class="metric-label">PATENT FILED — MEDICAL DEVICE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · AGENT OS -->
+  <section class="chapter chapter-os" id="os" data-ch="2">
+    <div class="inner">
+      <p class="section-tag" data-reveal><span>02</span> WHAT I'M BUILDING NOW</p>
+      <h2 class="h2" data-reveal>THE AGENT&nbsp;OS<span class="acid">.</span></h2>
+      <div class="pillars">
+        <article class="pillar" data-reveal>
+          <div class="pillar-idx">01</div>
+          <h3>SECOND BRAIN</h3>
+          <p class="pillar-sub">// the memory</p>
+          <p>Every decision, document, and learning a company produces —
+             structured, versioned, queryable by agents.</p>
+        </article>
+        <article class="pillar" data-reveal>
+          <div class="pillar-idx">02</div>
+          <h3>MISSION CONTROL</h3>
+          <p class="pillar-sub">// the hands</p>
+          <p>A control plane where agents with full business context execute
+             real work — not chat, operations.</p>
+        </article>
+        <article class="pillar" data-reveal>
+          <div class="pillar-idx">03</div>
+          <h3>BUILT IN PUBLIC</h3>
+          <p class="pillar-sub">// the proof</p>
+          <p>Every system documented as it gets built. Not a polished
+             tutorial — the real thing, mistakes included.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · TRACK RECORD -->
+  <section class="chapter chapter-work" id="work" data-ch="3">
+    <div class="inner">
+      <p class="section-tag" data-reveal><span>03</span> TRACK RECORD — EVERY PROJECT WAS A BUSINESS</p>
+
+      <!-- Hellas Direct -->
+      <article class="case" data-reveal>
+        <header class="case-head">
+          <div class="case-meta"><span class="case-idx">3.1</span><span>AI LAB · 2025–26 · ARCHITECT / OWNER</span></div>
+          <h3 class="h3">HELLAS DIRECT</h3>
+          <p class="case-headline">The founders scouted me to build their AI&nbsp;lab.</p>
+        </header>
+        <p class="case-body">After the IBM win, Hellas Direct's founders asked me to run AI at an
+          insurer with <b>500k+ customers</b>. Owned the whole loop — architecture, code,
+          deployment, then product ownership.</p>
+        <div class="badges">
+          <span class="badge badge-acid">★ DIGITAL FINANCE AWARDS 2026 — WINNER</span>
+          <span class="badge">IN PRODUCTION TODAY</span>
+        </div>
+        <div class="pipeline" role="img" aria-label="Seven-agent claims pipeline: intake, security, translation, intent, extraction, notes, audit">
+          <p class="pipeline-title">CLAIMS AUTOMATION — 7-AGENT PIPELINE <span class="live"><i></i>LIVE</span></p>
+          <div class="pipeline-track">
+            <span class="node">INTAKE</span><span class="node">SECURITY</span><span class="node">TRANSLATION</span><span class="node">INTENT</span><span class="node">EXTRACTION</span><span class="node">NOTES</span><span class="node">AUDIT</span>
+          </div>
+          <div class="pipeline-stats">
+            <span>2,000+ REAL CLAIMS PROCESSED</span>
+            <span>25 MIN → 5 MIN PER CLAIM</span>
+            <span>99% F1</span>
+          </div>
+        </div>
+        <div class="projects">
+          <div class="project">
+            <h4>MCP SERVER</h4>
+            <p>The claims product exposed as a tool layer for any LLM. Their single
+               biggest competitive advantage — made callable.</p>
+            <p class="project-tech">MCP / FASTAPI / PYTHON</p>
+          </div>
+          <div class="project">
+            <h4>CUSTOM OCR ENGINE</h4>
+            <p>A classifier identifies the document, a fine-tuned extractor per type
+               pulls structured data. Any document the business receives.</p>
+            <p class="project-tech">GCP DOCUMENT AI / FINE-TUNING</p>
+          </div>
+          <div class="project">
+            <h4>WHATSAPP RAG ASSISTANT</h4>
+            <p>Customer-facing assistant on the channel Greeks actually use.
+               Separate system, also in production.</p>
+            <p class="project-tech">AWS BEDROCK / LAMBDA / DYNAMODB</p>
+          </div>
+        </div>
+        <p class="case-foot">PYTHON / PYDANTIC AI / GPT-4O / GCP / KUBERNETES — ran in parallel with a full-time consulting role; both delivered.</p>
+      </article>
+
+      <!-- Mediva-RX -->
+      <article class="case" data-reveal>
+        <header class="case-head">
+          <div class="case-meta"><span class="case-idx">3.2</span><span>VENTURE · 2023–26 · CO-FOUNDER</span></div>
+          <h3 class="h3">MEDIVA-RX</h3>
+          <p class="case-headline">From a basement to Columbia University.</p>
+        </header>
+        <p class="case-body">Started as a hackathon hack, pushed as far as a student venture can
+          go: national win, a filed patent, a real market pivot, a finalist seat at Columbia.</p>
+        <div class="badges">
+          <span class="badge badge-acid">NATIONAL WINNER</span>
+          <span class="badge">PATENT FILED</span>
+          <span class="badge">COLUMBIA FINALIST 2026</span>
+        </div>
+        <ol class="timeline">
+          <li><span class="t-year">2023</span><div><b>THE BUILD</b> — Smart pill dispenser with Face ID. TensorFlow and OpenCV on real hardware, built in a basement in a month for a hackathon deadline.</div></li>
+          <li><span class="t-year">2023</span><div><b>THE WIN</b> — 1st place, PreSfhmmy national competition. The hack became a venture.</div></li>
+          <li><span class="t-year">2024</span><div><b>THE PATENT</b> — Filed. Protected the core mechanism before talking to the market.</div></li>
+          <li><span class="t-year">2024–25</span><div><b>THE DISCOVERY</b> — 70+ customer interviews (pharma, elder care). The consumer product everyone liked wasn't the business.</div></li>
+          <li><span class="t-year">2025</span><div><b>THE PIVOT</b> — Consumer gadget → Type 2a medical device for decentralized clinical trials — running stages I and II at home. A market that pays.</div></li>
+          <li><span class="t-year">2026</span><div><b>COLUMBIA</b> — Lab 2 Market finalist, NTUA × Columbia. Presented in New York, June 2026.</div></li>
+        </ol>
+        <p class="case-foot">TENSORFLOW / OPENCV / REACT / DJANGO — the tech served the business, never the other way around.</p>
+      </article>
+
+      <!-- UNIAI × IBM -->
+      <article class="case" data-reveal>
+        <header class="case-head">
+          <div class="case-meta"><span class="case-idx">3.3</span><span>HACKATHON · 2024 · ML / LEAD</span></div>
+          <h3 class="h3">UNIAI × IBM</h3>
+          <p class="case-headline">A weekend hack that became a job offer from founders.</p>
+        </header>
+        <p class="case-body">The clearest version of how I operate: ship something real fast,
+          then let the room escalate it.</p>
+        <div class="badges">
+          <span class="badge badge-acid">1ST PLACE — IBM CHALLENGE</span>
+          <span class="badge">IBM SUMMIT STAGE</span>
+        </div>
+        <ol class="timeline">
+          <li><span class="t-year">48 HRS</span><div><b>MAY 2024</b> — ML taxi allocation for Chicago O'Hare. A model predicting aircraft delays by type, airline, time, destination — driving dynamic taxi dispatch.</div></li>
+          <li><span class="t-year">THE WIN</span><div>1st place. IBM's Chief AI Officer invited the team to present.</div></li>
+          <li><span class="t-year">THE STAGE</span><div>IBM Greece &amp; Cyprus quarterly summit — CEO Marios Maniatis handed me the mic in front of the whole company.</div></li>
+          <li><span class="t-year">THE JOB</span><div>Scouted to run an AI lab. Hellas Direct's founders saw it; the demo was the pitch; the pitch became the job.</div></li>
+        </ol>
+        <p class="case-foot">PYTHON / LOGISTIC REGRESSION / IBM CLOUD — won as a student, hired as an architect.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 04 · STACK -->
+  <section class="chapter chapter-stack" id="stack" data-ch="4">
+    <div class="inner">
+      <p class="section-tag" data-reveal><span>04</span> STACK — STRATA</p>
+      <h2 class="h2" data-reveal>THE MATERIAL<span class="acid">.</span></h2>
+      <dl class="stack-list">
+        <div class="stack-row" data-reveal><dt>LANGUAGES</dt><dd>Python · TypeScript · Java · JavaScript · SQL</dd></div>
+        <div class="stack-row" data-reveal><dt>AGENTIC</dt><dd>Pydantic AI · LangChain · Google ADK · MCP <span class="acid-tag">ALL IN PRODUCTION</span></dd></div>
+        <div class="stack-row" data-reveal><dt>INFRA</dt><dd>AWS · GCP · Azure · Docker · Kubernetes · Terraform</dd></div>
+        <div class="stack-row" data-reveal><dt>DATA</dt><dd>PostgreSQL · Redis · Neo4j · Apache Spark</dd></div>
+        <div class="stack-row" data-reveal><dt>AI / ML</dt><dd>RAG pipelines · fine-tuned Document AI · TensorFlow · OpenCV</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 05 · CONTACT -->
+  <section class="chapter chapter-contact" id="contact" data-ch="5">
+    <div class="inner">
+      <p class="section-tag" data-reveal><span>05</span> SIGNAL — OPEN CHANNEL</p>
+      <h2 class="display contact-line" data-reveal>WANT AGENTS THAT ACTUALLY <b class="acid">KNOW YOUR BUSINESS</b>?</h2>
+      <div class="cta-row" data-reveal>
+        <a class="btn btn-acid btn-big magnetic" href="mailto:angeles.michalis@gmail.com">angeles.michalis@gmail.com</a>
+      </div>
+      <footer class="footer" data-reveal>
+        <span>© 2026 MICHAEL ANGELES</span>
+        <span class="footer-links">
+          <a href="https://github.com/michangelis" target="_blank" rel="noopener">GITHUB</a>
+          <a href="https://linkedin.com/in/michael-angeles-a6327923a" target="_blank" rel="noopener">LINKEDIN</a>
+          <a href="mailto:angeles.michalis@gmail.com">EMAIL</a>
+        </span>
+        <span>ATHENS → LONDON</span>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<div id="webgl-fallback" aria-hidden="true"></div>
+
+<script type="module" src="main.js"></script>
+</body>
 </html>
