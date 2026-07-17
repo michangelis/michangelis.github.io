@@ -14,7 +14,7 @@ Co-founder of Mediva (smart pill dispenser → Class IIa medical device).
 Previously Netcompany, Copenhagen; UniAI winner.
 
 - GitHub: [@michangelis](https://github.com/michangelis)
-- Email: angeles.michalis@gmail.com
+- Email: michael.angeles@nightengines.com
 
 ## The site
 
